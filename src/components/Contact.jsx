@@ -53,12 +53,16 @@ const Contact = () => {
             {/* Contact Form snippet */}
             <div className="bg-white/50 backdrop-blur max-w-md w-full rounded-2xl p-6 shadow-sm border border-white">
               <h3 className="text-xl font-bold text-brand-navy mb-6">Quick Enquiry</h3>
-              <form className="space-y-4 text-left">
+              <form 
+              action="https://formspree.io/f/mzdkwvwz" 
+              method="POST" 
+              className="space-y-4 text-left"
+              >
                 <div>
-                  <input type="text" placeholder="Student Name" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" />
+                  <input type="text" placeholder="Student Name" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" required />
                 </div>
                 <div>
-                  <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" />
+                  <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" required />
                 </div>
                 <div>
                   <select className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-500">
@@ -68,7 +72,7 @@ const Contact = () => {
                     <option value="icse">ICSE</option>
                   </select>
                 </div>
-                <button type="button" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-navy text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-navy text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                   Send Message
                 </button>
               </form>
