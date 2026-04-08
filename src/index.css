@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #ecad0a;
+  --color-brand-blue: #209dd7;
+  --color-brand-purple: #753991;
+  --color-brand-navy: #032147;
+  --color-brand-gray: #888888;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue/30;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl;
+  }
+  
+  .glass-dark {
+    @apply bg-brand-navy/80 backdrop-blur-md border border-white/10 shadow-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue via-brand-purple to-brand-navy;
+  }
+  
+  .text-gradient-light {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-yellow to-brand-blue;
+  }
+}
