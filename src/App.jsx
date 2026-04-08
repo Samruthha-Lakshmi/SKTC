@@ -6,6 +6,7 @@ import Subjects from './components/Subjects';
 import Syllabus from './components/Syllabus';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <Chatbot />
       </div>
     </div>
   );
