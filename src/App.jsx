@@ -1,9 +1,11 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Profile from './components/Profile';
-import Subjects from './components/Subjects';
+import Features from './components/Features';
 import Syllabus from './components/Syllabus';
+import Subjects from './components/Subjects';
+import Profile from './components/Profile';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
@@ -22,9 +24,11 @@ function App() {
         <Navbar />
         <main>
           <Hero />
+          <Features />
           <Syllabus />
           <Subjects />
           <Profile />
+          <Testimonials />
           <Contact />
         </main>
         <Footer />
