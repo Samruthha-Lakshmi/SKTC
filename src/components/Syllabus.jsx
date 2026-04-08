@@ -11,8 +11,8 @@ const Syllabus = () => {
 
   return (
     <section id="syllabus" className="py-20 relative bg-white/40 border-y border-white/60">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -20,7 +20,7 @@ const Syllabus = () => {
             viewport={{ once: true }}
             className="flex-1"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
+            <h2 className="text-3xl lg:text-5xl font-bold text-brand-navy mb-4 sm:mb-6">
               Comprehensive <span className="text-gradient">Syllabus</span> Coverage
             </h2>
             <p className="text-slate-600 text-lg mb-8 leading-relaxed">
@@ -37,7 +37,7 @@ const Syllabus = () => {
             </ul>
           </motion.div>
 
-          <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {boards.map((board, index) => (
               <motion.div
                 key={board.name}

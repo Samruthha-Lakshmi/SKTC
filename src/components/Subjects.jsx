@@ -49,9 +49,9 @@ const itemVariants = {
 const Subjects = () => {
   return (
     <section id="subjects" className="py-20 relative">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -77,14 +77,14 @@ const Subjects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
         >
           {subjects.map((sub) => (
             <motion.div
               key={sub.id}
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="glass rounded-3xl p-8 relative overflow-hidden group cursor-pointer border border-white/60 shadow-xl transition-all duration-300"
+              className="glass rounded-[2rem] p-6 sm:p-8 relative overflow-hidden group cursor-pointer border border-white/60 shadow-xl transition-all duration-300"
             >
               {/* Card hover effect background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${sub.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>

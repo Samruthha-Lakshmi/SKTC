@@ -8,10 +8,10 @@ const Profile = () => {
       {/* Decorative gradient blob */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-brand-purple/5 blur-[120px] pointer-events-none -z-10"></div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="glass-dark rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="glass-dark rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-16 shadow-2xl relative overflow-hidden">
 
-          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-20">
 
             {/* Image Container */}
             <motion.div
@@ -21,7 +21,7 @@ const Profile = () => {
               transition={{ duration: 0.8 }}
               className="relative shrink-0"
             >
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-brand-yellow via-brand-purple to-brand-blue shadow-2xl">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-1.5 md:p-2 bg-gradient-to-tr from-brand-yellow via-brand-purple to-brand-blue shadow-2xl mx-auto">
                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-brand-navy bg-slate-800">
                   {/* Assuming image is placed in public folder as profile.jpg */}
                   <img
@@ -61,11 +61,11 @@ const Profile = () => {
                 Meet the Founder
               </div>
 
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white drop-shadow-sm">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-6 text-white drop-shadow-sm">
                 Guiding Students to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow to-white">Brilliance</span>
               </h2>
 
-              <div className="space-y-4 text-slate-300 text-lg">
+              <div className="space-y-4 text-slate-300 text-base sm:text-lg">
                 <p>
                   As the driving force behind Sree Krishna Tuition Center, my mission has always been to provide quality education in a nurturing environment. We don't just teach subjects; we cultivate a deep understanding and love for learning.
                 </p>

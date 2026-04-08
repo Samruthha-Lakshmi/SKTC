@@ -29,7 +29,7 @@ const Navbar = () => {
         isScrolled ? 'py-4 glass' : 'py-6 bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-2 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-purple flex items-center justify-center text-white shadow-lg group-hover:shadow-brand-blue/50 transition-all duration-300">
             <BookOpen size={20} />
@@ -73,7 +73,7 @@ const Navbar = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden glass absolute top-full left-0 w-full border-t border-white/20 px-6 py-4 flex flex-col gap-4 shadow-xl"
+          className="md:hidden glass absolute top-full left-0 w-full border-t border-white/20 px-4 sm:px-6 py-4 flex flex-col gap-4 shadow-xl"
         >
           {navLinks.map((link) => (
             <a

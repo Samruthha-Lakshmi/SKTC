@@ -5,15 +5,15 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 const Contact = () => {
   return (
     <section id="contact" className="py-20 relative">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
-        <div className="max-w-4xl mx-auto glass rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-white/60">
+        <div className="max-w-4xl mx-auto glass rounded-[2rem] md:rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-xl border border-white/60">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Get in Touch</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-navy mb-3 sm:mb-4">Get in Touch</h2>
             <p className="text-slate-600">Have questions? We'd love to hear from you. Register now for the upcoming batches.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             
             <div className="space-y-8">
               <motion.div whileHover={{ x: 5 }} className="flex items-start gap-4 group">
@@ -75,6 +75,7 @@ const Contact = () => {
                 <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-navy text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                   Send Message
                 </button>
+                <input type="hidden" name="_redirect" value="https://vercel.com/samruthha-lakshmis-projects/sktc/thank-you" />
               </form>
             </div>
 

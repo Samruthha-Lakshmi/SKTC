@@ -4,9 +4,9 @@ import { GraduationCap, ArrowRight, Star } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    <section id="home" className="pt-28 pb-16 md:pt-40 md:pb-32 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
           
           {/* Text Content */}
           <motion.div 
@@ -20,7 +20,7 @@ const Hero = () => {
               <span className="text-sm font-semibold text-brand-navy">Excellence in Education</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight mb-6 text-brand-navy">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6 text-brand-navy">
               Empowering Minds at <br />
               <span className="text-gradient">Sree Krishna</span>
               <br /> Tuition Center
@@ -33,13 +33,13 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a 
                 href="#contact" 
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-brand-blue to-brand-navy text-white font-bold text-lg shadow-xl shadow-brand-blue/30 hover:shadow-2xl hover:shadow-brand-blue/40 transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+                className="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-brand-blue to-brand-navy text-white font-bold text-base sm:text-lg shadow-xl shadow-brand-blue/30 hover:shadow-2xl hover:shadow-brand-blue/40 transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
               >
                 Join Classes Today
               </a>
               <a 
                 href="#subjects" 
-                className="px-8 py-4 rounded-full glass font-bold text-brand-navy text-lg hover:bg-white/80 transition-all duration-300 flex items-center gap-2 group w-full sm:w-auto justify-center"
+                className="px-6 py-3 sm:px-8 sm:py-4 rounded-full glass font-bold text-brand-navy text-base sm:text-lg hover:bg-white/80 transition-all duration-300 flex items-center gap-2 group w-full sm:w-auto justify-center"
               >
                 Explore Subjects
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -47,15 +47,15 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 border-t border-slate-200/60 pt-8">
+            <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 border-t border-slate-200/60 pt-6 sm:pt-8 text-center sm:text-left">
               {[
                 { label: 'Classes', value: '4 to 12' },
                 { label: 'Syllabus Focus', value: 'Complete' },
                 { label: 'Support', value: 'Personalized' }
               ].map((stat, i) => (
-                <div key={i}>
-                  <div className="text-2xl font-bold text-brand-navy">{stat.value}</div>
-                  <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">{stat.label}</div>
+                <div key={i} className="min-w-[40%] sm:min-w-0">
+                  <div className="text-xl sm:text-2xl font-bold text-brand-navy">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-slate-500 font-medium uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
