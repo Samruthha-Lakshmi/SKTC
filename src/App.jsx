@@ -5,6 +5,7 @@ import Features from './components/Features';
 import Syllabus from './components/Syllabus';
 import Subjects from './components/Subjects';
 import Achievers from './components/Achievers';
+import Gallery from './components/Gallery';
 import Profile from './components/Profile';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
@@ -30,6 +31,7 @@ function App() {
           <Syllabus />
           <Subjects />
           <Achievers />
+          <Gallery />
           <Profile />
           <Testimonials />
           <FAQ />
