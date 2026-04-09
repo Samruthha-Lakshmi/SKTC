@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot } from 'lucide-react';
+import robot from "../assets/robot.png";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -127,14 +128,23 @@ const Chatbot = () => {
       </AnimatePresence>
 
       <motion.button
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple flex items-center justify-center text-white shadow-xl hover:shadow-brand-blue/40 border-2 border-white/20 z-50 relative group"
+        className="fixed bottom-28 right-6 z-50"
       >
-        <span className="absolute inset-0 rounded-full bg-brand-blue blur-md opacity-40 group-hover:opacity-60 transition-opacity"></span>
-        {isOpen ? <X size={24} className="relative z-10" /> : <MessageCircle size={24} className="relative z-10" />}
-      </motion.button>
+        {isOpen ? (
+    <div className="w-14 h-14 flex items-center justify-center bg-white rounded-full shadow-lg">
+      <X size={24} />
+    </div>
+  ) : (
+    <img
+      src={robot}
+      alt="Chatbot"
+      className="w-20 h-20 object-contain animate-[wiggle_1.5s_infinite]"
+    />
+  )}
+</motion.button>
     </div>
   );
 };

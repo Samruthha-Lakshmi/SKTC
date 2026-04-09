@@ -16,7 +16,7 @@ import Chatbot from './components/Chatbot';
 function App() {
   return (
     <div className="min-h-screen bg-slate-50 overflow-x-hidden">
-      {/* Dynamic background blobez for 3D/glass effect */}
+      
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand-blue/10 blur-[120px]" />
         <div className="absolute top-[20%] right-[-10%] w-[30%] h-[50%] rounded-full bg-brand-purple/10 blur-[140px]" />
@@ -36,6 +36,8 @@ function App() {
           <Testimonials />
           <FAQ />
           <Contact />
+         
+
         </main>
         <Footer />
         <Chatbot />
