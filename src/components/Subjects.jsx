@@ -6,28 +6,28 @@ const subjects = [
   {
     id: 'mathematics',
     title: 'Mathematics',
-    icon: <Calculator className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&q=80&auto=format&fit=crop',
     gradient: 'from-blue-500 to-indigo-600',
     description: 'Master complex equations, trigonometry, calculus, and foundational logic required for high-scoring exams.'
   },
   {
     id: 'accountancy',
     title: 'Accountancy',
-    icon: <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&q=80&auto=format&fit=crop',
     gradient: 'from-emerald-400 to-teal-600',
     description: 'Clear concepts in financial accounting, balance sheets, and commerce principles for advanced students.'
   },
   {
     id: 'computerscience',
     title: 'Computer Science',
-    icon: <Code className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80&auto=format&fit=crop',
     gradient: 'from-brand-purple to-pink-600',
     description: 'Programming fundamentals, data structures, and IT skills to prepare for the digital future.'
   },
   {
     id: 'science',
     title: 'Science & Others',
-    icon: <BrainCircuit className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&q=80&auto=format&fit=crop',
     gradient: 'from-orange-400 to-brand-yellow',
     description: 'Physics, Chemistry, and Biology essentials designed comprehensively for board excellence.'
   }
@@ -89,8 +89,8 @@ const Subjects = () => {
               {/* Card hover effect background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${sub.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
               
-              <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl mb-6 shadow-lg bg-gradient-to-br ${sub.gradient} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
-                {sub.icon}
+              <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl mb-6 shadow-md overflow-hidden transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
+                <img src={sub.image} alt={sub.title} className="w-full h-full object-cover" />
               </div>
               
               <h3 className="text-2xl font-bold text-brand-navy mb-3 group-hover:text-brand-blue transition-colors">

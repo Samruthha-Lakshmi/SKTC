@@ -4,8 +4,10 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Syllabus from './components/Syllabus';
 import Subjects from './components/Subjects';
+import Achievers from './components/Achievers';
 import Profile from './components/Profile';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
@@ -27,8 +29,10 @@ function App() {
           <Features />
           <Syllabus />
           <Subjects />
+          <Achievers />
           <Profile />
           <Testimonials />
+          <FAQ />
           <Contact />
         </main>
         <Footer />

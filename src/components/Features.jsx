@@ -5,28 +5,24 @@ import { Users, FileText, Target, Trophy } from 'lucide-react';
 const Features = () => {
   const features = [
     {
-      icon: <Users size={32} className="text-white" />,
+      image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=80&auto=format&fit=crop",
       title: "Small Batch Sizes",
-      description: "We strictly limit our class sizes to ensure every single student receives personalized attention and doubt-clearing time.",
-      bg: "from-brand-blue to-cyan-500"
+      description: "We strictly limit our class sizes to ensure every single student receives personalized attention and doubt-clearing time."
     },
     {
-      icon: <FileText size={32} className="text-white" />,
+      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80&auto=format&fit=crop",
       title: "Weekly Mock Tests",
-      description: "Regular evaluations help students overcome exam fear and manage their time efficiently for final boards.",
-      bg: "from-brand-purple to-pink-500"
+      description: "Regular evaluations help students overcome exam fear and manage their time efficiently for final boards."
     },
     {
-      icon: <Target size={32} className="text-white" />,
+      image: "/concept.png",
       title: "Concept-first Approach",
-      description: "We focus on building a strong foundation of fundamental concepts rather than rote memorization.",
-      bg: "from-brand-yellow to-orange-500"
+      description: "We focus on building a strong foundation of fundamental concepts rather than rote memorization."
     },
     {
-      icon: <Trophy size={32} className="text-white" />,
+      image: "/proven-results.png",
       title: "Proven Results",
-      description: "Consistent track record of our students producing top-tier scores in Stateboard, CBSE, and ICSE examinations.",
-      bg: "from-brand-navy to-indigo-600"
+      description: "Consistent track record of our students producing top-tier scores in Stateboard, CBSE, and ICSE examinations."
     }
   ];
 
@@ -59,8 +55,8 @@ const Features = () => {
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-slate-100 group"
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.bg} flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                {feature.icon}
+              <div className={`w-20 h-20 rounded-2xl mb-6 shadow-md overflow-hidden group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500`}>
+                <img src={feature.image} alt={feature.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-xl font-bold text-brand-navy mb-3">{feature.title}</h3>
               <p className="text-slate-600 leading-relaxed text-sm">

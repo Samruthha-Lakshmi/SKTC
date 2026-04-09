@@ -1,8 +1,37 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const form = e.target;
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mzdkwvwz", {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+        form.reset();
+      } else {
+        alert("Oops! There was a problem submitting your form");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
@@ -52,31 +81,71 @@ const Contact = () => {
 
             {/* Contact Form snippet */}
             <div className="bg-white/50 backdrop-blur max-w-md w-full rounded-2xl p-6 shadow-sm border border-white">
-              <h3 className="text-xl font-bold text-brand-navy mb-6">Quick Enquiry</h3>
-              <form 
-              action="https://formspree.io/f/mzdkwvwz" 
-              method="POST" 
-              className="space-y-4 text-left"
-              >
-                <div>
-                  <input type="text" placeholder="Student Name" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" required />
-                </div>
-                <div>
-                  <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" required />
-                </div>
-                <div>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-500">
-                    <option value="">Select Board</option>
-                    <option value="state">Stateboard</option>
-                    <option value="cbse">CBSE</option>
-                    <option value="icse">ICSE</option>
-                  </select>
-                </div>
-                <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-navy text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                  Send Message
-                </button>
-                <input type="hidden" name="_redirect" value="https://vercel.com/samruthha-lakshmis-projects/sktc/thank-you" />
-              </form>
+              <AnimatePresence mode="wait">
+                {isSubmitted ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center h-full text-center py-8 space-y-4"
+                  >
+                    <div className="w-16 h-16 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center mb-2 shadow-sm">
+                      <CheckCircle size={32} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-brand-navy">Thank You!</h3>
+                    <p className="text-slate-600 px-4">
+                      Your enquiry has been submitted. We will get back to you shortly to confirm the details.
+                    </p>
+                    <button 
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-4 text-brand-blue font-medium hover:underline focus:outline-none"
+                    >
+                      Submit another enquiry
+                    </button>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <h3 className="text-xl font-bold text-brand-navy mb-6">Quick Enquiry</h3>
+                    <form 
+                      onSubmit={handleSubmit}
+                      className="space-y-4 text-left"
+                    >
+                      <div>
+                        <input type="text" name="student_name" placeholder="Student Name" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" required />
+                      </div>
+                      <div>
+                        <input 
+                          type="tel" 
+                          name="phone_number" 
+                          placeholder="Phone Number (10 digits)" 
+                          pattern="[0-9]{10}" 
+                          maxLength="10" 
+                          minLength="10" 
+                          title="Please enter exactly 10 digits"
+                          className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-800" 
+                          required 
+                        />
+                      </div>
+                      <div>
+                        <select name="board" className="w-full px-4 py-3 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 border border-slate-200 transition-all text-slate-500" required>
+                          <option value="">Select Board</option>
+                          <option value="state">Stateboard</option>
+                          <option value="cbse">CBSE</option>
+                          <option value="icse">ICSE</option>
+                        </select>
+                      </div>
+                      <button type="submit" disabled={isSubmitting} className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-navy text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:hover:translate-y-0 transition-all duration-300">
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                      </button>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
           </div>

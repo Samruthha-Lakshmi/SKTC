@@ -4,9 +4,9 @@ import { BookMarked, CheckCircle2 } from 'lucide-react';
 
 const Syllabus = () => {
   const boards = [
-    { name: 'Stateboard', color: 'from-brand-blue to-cyan-500' },
-    { name: 'CBSE', color: 'from-brand-yellow to-orange-500' },
-    { name: 'ICSE', color: 'from-brand-purple to-pink-500' }
+    { name: 'Stateboard', color: 'from-brand-blue to-cyan-500', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/TamilNadu_Logo.svg/200px-TamilNadu_Logo.svg.png' },
+    { name: 'CBSE', color: 'from-brand-yellow to-orange-500', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/95/CBSE_new_logo.svg/200px-CBSE_new_logo.svg.png' },
+    { name: 'ICSE', color: 'from-brand-purple to-pink-500', logo: '/icse.png' }
   ];
 
   return (
@@ -47,8 +47,12 @@ const Syllabus = () => {
                 transition={{ delay: index * 0.2 }}
                 className="glass rounded-3xl p-6 text-center shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2 border border-white/80"
               >
-                <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${board.color} flex items-center justify-center text-white mb-4 shadow-md`}>
-                  <BookMarked size={28} />
+                <div className={`w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center mb-5 shadow-inner border-4 border-transparent bg-clip-border`}>
+                  <img 
+                    src={board.logo} 
+                    alt={`${board.name} Logo`} 
+                    className="w-14 h-14 object-contain"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-brand-navy">{board.name}</h3>
                 <div className="mt-3 w-12 h-1 bg-slate-200 mx-auto rounded-full"></div>

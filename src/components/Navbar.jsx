@@ -30,13 +30,18 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-purple flex items-center justify-center text-white shadow-lg group-hover:shadow-brand-blue/50 transition-all duration-300">
-            <BookOpen size={20} />
+        <a href="#home" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 rounded-full overflow-hidden bg-white shadow-md border-2 border-white/50 group-hover:shadow-brand-blue/30 transition-all duration-300">
+            <img src="/sktc-logo.png" alt="SKTC Logo" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-navy to-brand-purple">
-            SKTC
-          </span>
+          <div className="flex flex-col">
+            <span className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-brand-navy to-brand-blue leading-none">
+              Sree Krishna
+            </span>
+            <span className="text-xs font-semibold text-brand-purple tracking-widest uppercase mt-1">
+              Tuition Center
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
