@@ -11,13 +11,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
           <div className="col-span-1 md:col-span-1">
-            <a href="#home" className="flex items-center gap-2 mb-6 group inline-flex">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-purple flex items-center justify-center text-white shadow-lg group-hover:shadow-brand-blue/50 transition-all duration-300">
-                <BookOpen size={20} />
+            <a href="#home" className="flex items-center gap-3 mb-6 group inline-flex">
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-white shadow-md border border-white/20 group-hover:shadow-brand-blue/30 transition-all duration-300 transform group-hover:-translate-y-1">
+                <img src="/sktc-logo.png" alt="SKTC Logo" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <span className="text-xl font-bold text-white tracking-wide">
-                SKTC
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl font-black text-white leading-none tracking-wide">
+                  Sree Krishna
+                </span>
+                <span className="text-xs font-semibold text-brand-yellow/90 tracking-widest uppercase mt-1">
+                  Tuition Center
+                </span>
+              </div>
             </a>
             <p className="text-slate-400 mb-6 leading-relaxed max-w-sm">
               Sree Krishna Tuition Center is dedicated to shaping young minds through quality education, specialized coaching, and comprehensive support.
